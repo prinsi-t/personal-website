@@ -80,7 +80,7 @@ export default function Hero() {
               text-base                              // Fixed font size
               min-w-44                              // Fixed minimum width
             "
-            href="/resume.pdf" // Replace with your resume PDF path in public folder
+            href="/Resume (3).pdf" // Replace with your resume PDF path in public folder
             target="_blank"
           >
             <Image
