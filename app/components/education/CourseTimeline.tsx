@@ -13,29 +13,19 @@ interface CourseItem {
 // Example course data - Replace with your own education experience
 const courses: CourseItem[] = [
   {
-    date: "2023 - Present",
-    title: "Your University Name",
-    description: "Your Major | GPA: X.XX"
+    date: "2025 - Present",
+    title: "SRGPGPI",
+    description: "Bachelor of Computer Applications (BCA)"
   },
   {
-    date: "Fall 2023",
-    title: "Course Name 1",
-    description: "Keyword1 | Keyword2 | Keyword3"
+    date: "2022 - 2025",
+    title: "CM Rise Govt. Ahilya Ashram School No. 1",
+    description: "High School Diploma, PCM"
   },
   {
-    date: "Spring 2024", 
-    title: "Course Name 2",
-    description: "Keyword1 | Keyword2 | Keyword3"
-  },
-  {
-    date: "Fall 2024",
-    title: "Course Name 3",
-    description: "Keyword1 | Keyword2 | Keyword3"
-  },
-  {
-    date: "Spring 2025",
-    title: "Course Name 4", 
-    description: "Keyword1 | Keyword2 | Keyword3"
+    date: "2010 - 2021",
+    title: "RKMVP",
+    description: "Middle School Diploma"
   }
 ]
 

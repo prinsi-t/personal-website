@@ -15,22 +15,20 @@ const technologies = {
   // Frontend development skills examples
   frontend: [
     { name: 'React', icon: '/skills/react.svg' },
-    { name: 'Vue', icon: '/skills/vue.svg' },     // Add your familiar frontend frameworks
-    { name: 'TypeScript', icon: '/skills/typescript.svg' },
+    { name: 'Bootstrap', icon: '/skills/bootstrap.svg' },     // Add your familiar frontend frameworks
+    { name: 'JavaScript', icon: '/skills/javascript.svg' },
   ],
   
   // Backend development skills examples
   backend: [
     { name: 'Node.js', icon: '/skills/nodejs.svg' },
-    { name: 'Python', icon: '/skills/python.svg' }, // Add your familiar backend languages
-    { name: 'Java', icon: '/skills/java.svg' },
+    
   ],
 
   // Database and deployment examples
   infrastructure: [
-    { name: 'MySQL', icon: '/skills/mysql.svg' },  // Add databases you've used
     { name: 'MongoDB', icon: '/skills/mongodb.svg' },
-    { name: 'Docker', icon: '/skills/docker.svg' }, // Add deployment tools you're familiar with
+    { name: 'Heroku', icon: '/skills/heroku.svg' }, // Add your familiar databases and deployment platforms
   ],
 
   // Development tools examples

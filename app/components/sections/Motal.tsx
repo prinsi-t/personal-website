@@ -7,30 +7,14 @@ import {
   PROJECT_DATA
 } from '@/app/data/project'
 
-const preloadImages = (features: { image: string | string[] }[]) => {
-  if (typeof window === 'undefined') return;
-  
-  features.forEach(feature => {
-    if (Array.isArray(feature.image)) {
-      feature.image.forEach(img => {
-        const image = new window.Image();
-        image.src = img;
-      });
-    } else {
-      const image = new window.Image();
-      image.src = feature.image;
-    }
-  });
-};
-
 export default function ExperienceModal({ 
   open, 
   onClose,
   experienceId 
 }: { 
-  open: boolean
-  onClose: () => void
-  experienceId: number 
+  open: boolean,
+  onClose: () => void,
+  experienceId: number
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
@@ -39,7 +23,6 @@ export default function ExperienceModal({
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
-      preloadImages(experience.features);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -47,7 +30,7 @@ export default function ExperienceModal({
     return () => {
       document.body.style.overflow = 'unset';
     }
-  }, [open, experience.features]);
+  }, [open]);
 
   useEffect(() => {
     if (!open) {
@@ -231,100 +214,6 @@ export default function ExperienceModal({
             />
           </a>
 
-          <div className="space-y-8">
-            <h2 className="
-              text-xl sm:text-2xl 
-              font-bold 
-              tracking-tight
-              flex items-center gap-2
-              before:content-[''] before:block before:w-8 before:h-[2px] 
-              before:bg-purple-500/50
-            ">
-              Core Features
-            </h2>
-            <div className="space-y-12">
-              {experience.features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="
-                    flex flex-col md:flex-row 
-                    gap-8 
-                    items-center
-                    p-4 rounded-xl
-                  "
-                >
-                  <div className="flex-1 space-y-4">
-                    <h3 className="
-                      text-lg sm:text-xl 
-                      font-semibold 
-                      tracking-tight
-                      text-purple-600 dark:text-purple-400
-                    ">
-                      {feature.title}
-                    </h3>
-                    <p className="
-                      text-gray-600 dark:text-gray-300 
-                      leading-relaxed
-                    ">
-                      {feature.description}
-                    </p>
-                  </div>
-                  <div className="
-                    flex-1 
-                    relative w-full
-                  ">
-                    {Array.isArray(feature.image) ? (
-                      <div className="space-y-4">
-                        <div className="
-                          relative w-full h-[200px]
-                          rounded-xl overflow-hidden
-                          shadow-lg
-                        ">
-                          <Image
-                            src={feature.image[currentImageIndex] || feature.image[0]}
-                            alt={feature.title}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div className="flex justify-center gap-2">
-                          {feature.image.map((_, imgIndex) => (
-                            <button
-                              key={imgIndex}
-                              onClick={() => setCurrentImageIndex(imgIndex)}
-                              className={`
-                                w-2 h-2 rounded-full
-                                transition-all duration-300
-                                ${currentImageIndex === imgIndex 
-                                  ? 'bg-purple-600 w-4' 
-                                  : 'bg-gray-300 hover:bg-gray-400'
-                                }
-                              `}
-                              aria-label={`View image ${imgIndex + 1}`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="
-                        relative w-full h-[200px]
-                        rounded-xl overflow-hidden
-                        shadow-lg
-                      ">
-                        <Image
-                          src={feature.image}
-                          alt={feature.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="space-y-8 mb-12">
             <h2 className="
               text-xl sm:text-2xl 
@@ -441,4 +330,4 @@ export default function ExperienceModal({
       </div>
     </div>
   )
-} 
+}

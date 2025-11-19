@@ -4,6 +4,7 @@ import Image from "next/image"
 import AnimatedText from "../common/AnimatedText"
 import FloatingElements from "../common/FloatingElements"
 
+
 export default function Hero() {
   return (
     <section id="home" className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -12,15 +13,15 @@ export default function Hero() {
         <AnimatedText className="flex flex-col items-center sm:items-start gap-4">
           <Image
             className="rounded-full"
-            src="/avatar.jpg" // Replace with your avatar image path in public folder
+            src="/avatar.jpeg" // Replace with your avatar image path in public folder
             alt="Profile Picture"
-            width={120}
-            height={120}
+            width={175}
+            height={50}
             priority
           />
-          <h1 className="text-4xl font-bold">Your Name</h1>
+          <h1 className="text-4xl font-bold">Prinsi Tiwari</h1>
           <p className="text-lg text-foreground/80 font-[family-name:var(--font-geist-mono)]">
-            Your Job Title
+            Software Developer | Open Source Enthusiast | Tech Blogger
           </p>
         </AnimatedText>
 
@@ -28,12 +29,20 @@ export default function Hero() {
           className="max-w-2xl text-center sm:text-left"
         >
           <p className="text-foreground/80 leading-relaxed">
-            Write a brief self-introduction here, including your educational background, job objectives, or current work status.
+                    👋 Hello! I'm Prinsi, a Software Engineer specialising in full-stack web development, driven by a strong passion for technology.
+
+                    I enjoy building cool things, solving problems, and constantly learning new skills. 
+
+                    <br></br>
+
+                    Feel free to reach out out to me -- I’m always open to connecting, collaborating, or just chatting about tech!
+
+                    Let’s connect and build something awesome together!         
           </p>
         </AnimatedText>
 
         <AnimatedText 
-          className="flex gap-4 items-center flex-row"
+          className="flex gap-5 items-center flex-row"
         >
           <a
             className="
@@ -46,7 +55,7 @@ export default function Hero() {
               px-5                                   // Fixed padding
               text-base                              // Fixed font size
             "
-            href="https://github.com/your-username" // Replace with your GitHub profile link
+            href="https://github.com/prinsi-t" // Replace with your GitHub profile link
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -84,17 +93,23 @@ export default function Hero() {
             />
             View Resume
           </a>
-        </AnimatedText>
-      </main>
 
-      <AnimatedText 
-        className="row-start-3 flex gap-6 flex-wrap items-center justify-center"
-      >
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="mailto:your-email" // Replace with your email address
-        >
-          <Image
+           <a
+            className="
+              relative
+              z-20
+              rounded-full border gap-2 border-solid border-black/[.08] dark:border-white/[.145] 
+              transition-colors flex items-center justify-center 
+              hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] 
+              h-12                                    // Fixed height
+              px-5                                   // Fixed padding
+              text-base                              // Fixed font size
+            "
+           href="mailto:tprincy56@gmail.com" // Replace with your email address
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
             aria-hidden
             className="dark:invert"
             src="/mail.svg"
@@ -103,14 +118,24 @@ export default function Hero() {
             height={16}
           />
           Send Email
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.linkedin.com/in/your-username" // Replace with your LinkedIn profile link
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
+          </a>
+
+          <a
+            className="
+              relative
+              z-20
+              rounded-full border gap-2 border-solid border-black/[.08] dark:border-white/[.145] 
+              transition-colors flex items-center justify-center 
+              hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] 
+              h-12                                    // Fixed height
+              px-5                                   // Fixed padding
+              text-base                              // Fixed font size
+            "
+           href="https://www.linkedin.com/in/prinsi-tiwari-b62042272/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
             aria-hidden
             className="dark:invert"
             src="/linkedin.svg"
@@ -119,8 +144,13 @@ export default function Hero() {
             height={16}
           />
           LinkedIn
-        </a>
-      </AnimatedText>
+          </a>
+        </AnimatedText>
+
+        
+      </main>
+
+      
     </section>
   )
 } 

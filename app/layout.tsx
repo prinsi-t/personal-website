@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 // TODO: Please update the title and description with your personal information
 export const metadata: Metadata = {
-  title: "Portfolio Template",
+  title: "Prinsi Portfolio",
   description: "A modern portfolio template for developers and designers",
 };
 

@@ -34,27 +34,27 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Example Project 1",
-    description: "This is a sample project description. Detail the main features, technical architecture, your responsibilities and project highlights. Use concise language to emphasize key points.",
-    period: "2024.01 - 2024.03",
-    image: "/example1/screenshot.png", // Screenshot path
-    skills: ["React", "TypeScript", "Node.js"], // Tech stack
-    link: "https://github.com/username/project1"
+    title: "Tic Tac Toe App",
+    description: "A tic-tac-toe game built with React.js and Vite.",
+    period: "-",
+    image: "/project/tictac.png", // Screenshot path
+    skills: ["React.js", "Vite"], // Tech stack
+    link: "https://tictactoe-ez2f.onrender.com/"
   },
   {
     id: 2, 
-    title: "Example Project 2",
-    description: "Another example project. Description can include: 1) Problems solved 2) Technical solutions used 3) Results achieved 4) What you learned",
-    period: "2023.10 - 2023.12",
-    image: "/example2/demo.png",
-    skills: ["Vue.js", "Python", "MongoDB"],
-    link: "https://github.com/username/project2"
+    title: "JavaScript Calculator App",
+    description: "This is a simple project a calculator built with JavaScript.",
+    period: "-",
+    image: "/project/cal.png",
+    skills: ["HTML", "CSS", "JavaScript"],
+    link: "https://htmljs-calculator.netlify.app/"
   }
 ];
 
 export default function Projects() {
-  const [modalOpen, setModalOpen] = useState(false)
-  const [selectedProject, setSelectedProject] = useState<number | null>(null)
+ /*  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<number | null>(null) */
 
   return (
     <section id="projects" className="container mx-auto px-4 sm:px-8 md:px-12">
@@ -85,8 +85,9 @@ export default function Projects() {
               <AnimatedText>
                 <div 
                   onClick={() => {
-                    setSelectedProject(project.id)
-                    setModalOpen(true)
+                   /// setSelectedProject(project.id)
+                   // setModalOpen(true)
+                    window.open(project.link, '_blank', 'noopener,noreferrer')
                   }}
                   className="
                     bg-white/[0.1] dark:bg-black/[0.2]
@@ -146,11 +147,11 @@ export default function Projects() {
         </div>
       </div>
 
-      <ExperienceModal
+      {/* <ExperienceModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         experienceId={selectedProject ?? 1}
-      />
+      /> */}
     </section>
   )
 } 

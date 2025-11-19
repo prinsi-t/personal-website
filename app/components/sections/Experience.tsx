@@ -27,21 +27,21 @@ type Experience = {
 const experiences: Experience[] = [
   {
     id: 1,
-    title: "Example Position 1",
-    company: "Example Company 1",
-    period: "January 2024 - Present",
-    logo: "/companyicon/company1.png", // Logo image path
-    skills: ["React", "TypeScript", "Node.js"], // Skills list
-    description: "This is a sample work description detailing your main responsibilities and achievements in this role."
+    title: "Software Engineer",
+    company: "100Devs",
+    period: "-",
+    logo: "/exp/companylogo.png", // Logo image path
+    skills: ["React", "Vite"], // Skills list
+    description: "A tic tac toe game built with React.js and Vite. This project involved creating an interactive user interface, implementing game logic, and ensuring responsive design for various devices."
   },
   {
     id: 2, 
-    title: "Example Position 2",
-    company: "Example Company 2",
-    period: "June 2023 - December 2023",
-    logo: "/companyicon/company2.png",
-    skills: ["Python", "Django", "PostgreSQL"],
-    description: "This is another sample work description. Consider including specific numbers and achievements."
+    title: "Software Engineer",
+    company: "100Devs",
+    period: "-",
+    logo: "/exp/companylogo.png",
+    skills: ["HTML", "CSS", "JavaScript"],
+    description: "A website for food recipe! This project involved developing a user-friendly interface, implementing recipe management, and responsive design to ensure a seamless experience across devices."
   }
 ];
 
