@@ -31,8 +31,8 @@ const experiences: Experience[] = [
     company: "100Devs",
     period: "-",
     logo: "/exp/companylogo.png", // Logo image path
-    skills: ["React", "Vite"], // Skills list
-    description: "A tic tac toe game built with React.js and Vite. This project involved creating an interactive user interface, implementing game logic, and ensuring responsive design for various devices."
+    skills: ["Node.js", "Express", "MongoDB"], // Skills list
+    description: "A todo list app built with Node.js, Express, and MongoDB. This project involved creating an interactive user interfaceand ensuring responsive design for various devices."
   },
   {
     id: 2, 
@@ -41,7 +41,7 @@ const experiences: Experience[] = [
     period: "-",
     logo: "/exp/companylogo.png",
     skills: ["HTML", "CSS", "JavaScript"],
-    description: "A website for food recipe! This project involved developing a user-friendly interface, implementing recipe management, and responsive design to ensure a seamless experience across devices."
+    description: "A website for food recipe! This project involved developing a user-friendly interface, implementing recipe management, and ensuring a seamless experience across devices."
   }
 ];
 

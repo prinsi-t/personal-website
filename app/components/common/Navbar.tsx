@@ -3,19 +3,6 @@
 import { useState, useEffect, useRef } from "react"
 import React from 'react'
 
-// Navigation bar configuration
-// To modify navigation bar order and content:
-// 1. Each item contains two properties:
-//    - name: Display name
-//    - href: Corresponding section id (must start with #)
-// 2. To change order, simply adjust item positions in array
-// 3. When adding new items ensure:
-//    - href matches section id in page
-//    - maintain consistent format
-// 4. To remove items, delete directly from array
-// Example: Moving Projects before Experience:
-// { name: "Projects", href: "#projects"},
-// { name: "Experience", href: "#experience"},
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -28,6 +15,7 @@ const navItems = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home")
+  const [isOpen, setIsOpen] = useState(false)
   const underlineRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLUListElement>(null)
   const NAVBAR_HEIGHT = 60
@@ -73,19 +61,30 @@ export default function Navbar() {
         behavior: 'smooth'
       })
     }
+    setIsOpen(false)
   }
 
+
+
+  
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-sm">
-      <div className="
-        max-w-4xl mx-auto 
-        px-3 sm:px-4 /* 移动端水平内边距3, sm(640px)以上为4 */
-        py-4
-      ">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-sm ">
+      <div className="w-full px-4 py-4 flex md:block">
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden flex items-center justify-center w-8 h-8"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+          </svg>
+        </button>
+
+        {/* Desktop Navigation */}
         <ul ref={navRef} className="
-          flex justify-center 
-          gap-4 sm:gap-8 /* 移动端间距4, sm(640px)以上为8 */
-          relative text-center overflow-x-auto
+          hidden md:flex justify-center items-center
+          gap-6 lg:gap-8
+          relative text-center w-full
         ">
           <div
             ref={underlineRef}
@@ -97,8 +96,10 @@ export default function Navbar() {
               <a
                 href={item.href}
                 className={`
-                  text-xs sm:text-sm /* 移动端字体大小xs(12px), sm(640px)以上为base(16px) */
+                  text-sm lg:text-base
                   font-medium whitespace-nowrap transition-colors
+                  px-3 py-2
+                  rounded-md hover:bg-foreground/5
                   ${activeSection === item.href.slice(1)
                     ? "text-foreground"
                     : "text-foreground/60 hover:text-foreground"
@@ -114,6 +115,33 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <ul className="md:hidden flex flex-col gap-2 mt-4 pb-2">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className={`
+                    block text-sm font-medium
+                    px-4 py-2 rounded-md transition-colors
+                    ${activeSection === item.href.slice(1)
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/60 hover:bg-foreground/5 hover:text-foreground"
+                    }
+                  `}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.href)
+                  }}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   )
